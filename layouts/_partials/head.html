@@ -2,8 +2,8 @@
 <meta name="viewport" content="width=device-width">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 <meta name="description" content="{{ or .Description site.Params.description }}">
-<meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#151a17" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181b18" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 {{- with resources.Get "css/main.css" }}
   {{- $opts := dict

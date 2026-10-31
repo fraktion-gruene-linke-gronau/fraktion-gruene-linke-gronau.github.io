@@ -1,6 +1,7 @@
 ---
 title: "Gremien"
 description: "Besetzung der Ausschüsse weiteren Gremien durch unsere Fraktion"
+eyebrow: "Wo wir verhandeln"
 ---
 
 ## Stadtrat

@@ -1,6 +1,7 @@
 ---
 title: "Struktur"
 description: "Wie die Fraktion ihre politische Arbeit organisiert."
+eyebrow: "Wie wir arbeiten"
 ---
 
 Unsere Fraktion besteht derzeit aus 24 [Mitgliedern](/mitglieder) (5 Ratsmitglieder und 19 sachkundige Bürger\*innen). Auf dieser Seite wollen wir kurz unsere fraktionsinternen Strukturen vorstellen, die maßgeblich den politischen Entscheidungsprozess bestimmen.

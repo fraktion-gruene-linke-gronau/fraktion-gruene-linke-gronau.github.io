@@ -1,5 +1,6 @@
 ---
 title: "Datenschutzerklärung"
+eyebrow: "Was wir speichern"
 ---
 
 ## 1. Datenschutz auf einen Blick

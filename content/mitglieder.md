@@ -1,8 +1,7 @@
 ---
 title: "Mitglieder"
 description: "Ratsmitglieder und sachkundige Bürger*innen der gemeinsamen Fraktion."
-params:
-  eyebrow: "wer wir sind"
+eyebrow: "Wer wir sind"
 ---
 
 Unsere gemeinsame Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE ist mit fünf Personen im Rat der Stadt Gronau vertreten. Auf dieser Seite möchten wir einen Überblick über die Aufgaben der einzelnen Fraktionsmitglieder geben.

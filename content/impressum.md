@@ -1,6 +1,7 @@
 ---
 title: "Impressum"
 description: "Angaben zur Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE im Rat der Stadt Gronau."
+eyebrow: "Wo wir sind"
 ---
 
 Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE {{< newline >}}

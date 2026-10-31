@@ -1,0 +1,16 @@
+{{- $items := slice -}}
+{{- range .pages -}}
+  {{- $timeline := partial "initiative-timeline-data.html" . -}}
+  {{- $items = $items | append (dict "page" . "updated" $timeline.updated) -}}
+{{- end -}}
+{{- $items = sort $items "updated" "desc" -}}
+{{- with .limit -}}
+  {{- $items = first . $items -}}
+{{- end -}}
+<div class="initiative-grid">
+  {{- range $items -}}
+    {{- partial "initiative-card.html" .page -}}
+  {{- else -}}
+    <p class="empty-state">{{ $.empty }}</p>
+  {{- end }}
+</div>

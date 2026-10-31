@@ -6,33 +6,11 @@
       {{ with .Content }}<div class="listing-intro prose">{{ . }}</div>{{ end }}
     </header>
     {{ if eq .Section "initiativen" }}
-      {{- $initiatives := slice -}}
-      {{- range .Pages -}}
-        {{- $timeline := partial "initiative-timeline-data.html" . -}}
-        {{- $initiatives = $initiatives | append (dict "page" . "updated" $timeline.updated) -}}
-      {{- end -}}
-      <div class="initiative-grid">
-        {{ range sort $initiatives "updated" "desc" }}
-          {{ partial "initiative-card.html" .page }}
-        {{ else }}
-          <p class="empty-state">Noch keine Anträge oder Anfragen veröffentlicht.</p>
-        {{ end }}
-      </div>
+      {{ partial "initiative-grid.html" (dict
+        "pages" .Pages
+        "empty" "Noch keine Anträge oder Anfragen veröffentlicht."
+      ) }}
     {{ else }}
-      {{ with .Pages }}
-        <div class="page-list">
-          {{ range .ByTitle }}
-            <a class="page-list__item" href="{{ .RelPermalink }}">
-              <span class="page-list__content prose-flow">
-                <h2>{{ .LinkTitle }}</h2>
-                {{ with .Params.role }}<p class="member-role">{{ . }}</p>{{ end }}
-                {{ with .Description }}<p>{{ . }}</p>{{ end }}
-              </span>
-              <span class="page-list__arrow" aria-hidden="true">↗</span>
-            </a>
-          {{ end }}
-        </div>
-      {{ end }}
     {{ end }}
   </section>
 {{ end }}

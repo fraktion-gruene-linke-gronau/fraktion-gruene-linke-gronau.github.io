@@ -1,0 +1,6 @@
+{{- with .member }}
+  <p class="roster-assignment">
+    <span class="roster-member">{{ . }}</span>
+    <span class="company-member-badge company-member-badge--{{ $.kind }}">{{ $.label }}</span>
+  </p>
+{{- end }}

@@ -1,6 +1,4 @@
 {{- $status := . -}}
-{{- $labels := dict
--}}
 {{- $icons := dict
   "eingereicht" "inbox"
   "vertagt" "hourglass_top"
@@ -9,9 +7,9 @@
   "abgelehnt" "cancel"
   "beantwortet" "check_circle"
 -}}
-<span class="initiative-status-badge initiative-status-badge--{{ $status }}">
+<span class="badge initiative-status-badge initiative-status-badge--{{ $status }}">
   <span class="material-symbols-outlined" aria-hidden="true">
     {{ index $icons $status | default "help" }}
   </span>
-  {{ index $labels $status | default ($status | humanize) }}
+  {{ $status | humanize }}
 </span>

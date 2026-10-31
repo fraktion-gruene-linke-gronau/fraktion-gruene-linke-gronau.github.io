@@ -14,7 +14,7 @@
     "empty" (.Get "shareholder_empty")
   )
 -}}
-<article class="roster-card">
+<article class="roster-card surface-card">
   <h3 class="roster-card__title">{{ .Get "name" }}</h3>
   <div class="roster-card__sections">
     {{- range $boards }}
@@ -23,18 +23,8 @@
         {{- if .empty }}
           <p class="roster-empty">{{ .empty }}</p>
         {{- else }}
-          {{- with .ordinary }}
-            <p class="roster-assignment">
-              <span class="roster-member">{{ . }}</span>
-              <span class="company-member-badge company-member-badge--ordinary">Ordentlich</span>
-            </p>
-          {{- end }}
-          {{- with .substitute }}
-            <p class="roster-assignment">
-              <span class="roster-member">{{ . }}</span>
-              <span class="company-member-badge company-member-badge--substitute">Vertretend</span>
-            </p>
-          {{- end }}
+          {{ partial "roster-assignment.html" (dict "member" .ordinary "kind" "ordinary" "label" "Ordentlich") }}
+          {{ partial "roster-assignment.html" (dict "member" .substitute "kind" "substitute" "label" "Vertretend") }}
         {{- end }}
       </section>
     {{- end }}

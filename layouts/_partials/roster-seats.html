@@ -1,0 +1,15 @@
+{{- $title := .title -}}
+{{- $members := .members -}}
+{{- $empty := .empty -}}
+<section class="roster-section">
+  <h4 class="roster-section__title">{{ $title }}</h4>
+  <ul class="roster-member-list">
+    {{- with $members }}
+      {{- range split . "|" }}
+        <li class="roster-member">{{ . }}</li>
+      {{- end }}
+    {{- else }}
+      <li class="roster-empty">{{ $empty }}</li>
+    {{- end }}
+  </ul>
+</section>

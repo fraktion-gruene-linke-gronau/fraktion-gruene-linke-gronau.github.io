@@ -1,8 +1,8 @@
 {{- $kind := .Params.kind | default "antrag" -}}
 {{- if eq $kind "anfrage" }}
-  <span class="initiative-type-badge"><span class="material-symbols-outlined" aria-hidden="true">help</span>Anfrage</span>
+  <span class="badge initiative-type-badge"><span class="material-symbols-outlined" aria-hidden="true">help</span>Anfrage</span>
 {{- else if eq $kind "antrag" }}
-  <span class="initiative-type-badge"><span class="material-symbols-outlined" aria-hidden="true">description</span>Antrag</span>
+  <span class="badge initiative-type-badge"><span class="material-symbols-outlined" aria-hidden="true">description</span>Antrag</span>
 {{- else }}
   {{- errorf "Unknown initiative kind %q in %s" $kind .Path -}}
 {{- end }}

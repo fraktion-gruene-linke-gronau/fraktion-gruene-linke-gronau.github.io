@@ -1,7 +1,8 @@
 {{ define "main" }}
   <article class="prose page-content">
-    <p class="eyebrow">{{ with .Section }}{{ . | humanize }}{{ else }}Information{{ end }}</p>
+    <p class="eyebrow">{{ .Params.eyebrow | default "Information" }}</p>
     <h1>{{ .Title }}</h1>
+    {{ with .Params.role }}<p class="member-role">{{ . }}</p>{{ end }}
     {{ .Content }}
   </article>
 {{ end }}

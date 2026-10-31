@@ -13,7 +13,7 @@
 {{- else if $party -}}
   {{- errorf "Unknown party %q in member shortcode on %s" $party .Page.Path -}}
 {{- end -}}
-<article class="member-profile" id="{{ $name | anchorize }}">
+<article class="member-profile surface-card" id="{{ $name | anchorize }}">
   {{- with $partyLogo }}
     <img class="member-profile__party" src="{{ . }}" alt="{{ printf "Mitglied von %s" $partyName }}" loading="lazy" decoding="async">
   {{- end }}

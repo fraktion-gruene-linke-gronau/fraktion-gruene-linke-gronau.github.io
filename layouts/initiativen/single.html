@@ -23,11 +23,16 @@
       <p>
         <a class="button" href="/documents/{{ .File.BaseFileName }}.pdf" target="_blank">
           <span class="material-symbols-outlined" aria-hidden="true">download</span>
-          Original als PDF herunterladen
+          {{ .Params.kind | humanize }} als PDF herunterladen
         </a>
       </p>
     </div>
 
+    {{- $kind_titles := dict
+      "anfrage" "Die Anfrage"
+      "antrag" "Der Antrag"
+    -}}
+    {{- $kind_title := index $kind_titles .Params.kind -}}
     {{ with .Params.timeline }}
       <section class="timeline prose-flow" aria-labelledby="timeline-title">
         <h2 id="timeline-title">Bisheriger Verlauf</h2>
@@ -43,7 +48,11 @@
                     <a class="text-link" href="{{ .ris }}" target="_blank" rel="noopener noreferrer">Vorgang im RIS <span aria-hidden="true">↗</span></a>
                   {{- end -}}
                 </div>
-                <p>{{ .note | default "" }}</p>
+                {{- if eq .status "eingereicht" -}}
+                  <p>{{ .note | default (printf "%s wurde bei der Verwaltung eingereicht." $kind_title) }}</p>
+                {{- else -}}
+                  <p>{{ .note | default "" }}</p>
+                {{- end -}}
               </div>
             </li>
           {{ end }}

@@ -12,7 +12,6 @@ timeline:
     note: "Der Antrag wurde im Ausschuss für Mobilität, Umwelt und Klimaschutz (MUK) beraten und vertagt um bei der nächsten Beratung den Leiter des Ordnungsamtes hinzuzuziehen."
   - date: 2025-11-13
     status: eingereicht
-    note: "Der Antrag wurde bei der Verwaltung eingereicht."
 ---
 
 Der Ausschuss für Mobilität, Umwelt und Klimaschutz möge beschließen, dass künftig keine Genehmigungen mehr für öffentliche Feuerwerksvorführungen oder vergleichbare Verkaufspräsentationen im Stadtgebiet Gronau erteilt werden, soweit sie nicht aus zwingenden Gründen des Brauchtums (zum Beispiel Volksfeste, Schützenfeste) erforderlich sind.

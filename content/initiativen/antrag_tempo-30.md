@@ -12,7 +12,6 @@ timeline:
     note: "Der Antrag wurde im Ausschuss für Mobilität, Umwelt und Klimaschutz (MUK) beraten und vertagt, um die beantragten Punkte genauer von der Verwaltung prüfen zu lassen."
   - date: 2026-04-23
     status: eingereicht
-    note: "Der Antrag wurde bei der Verwaltung eingereicht."
 ---
 
 **Gemeinsamer Antrag mit der [SPD-Fraktion](https://www.spd-gronau-epe.de/gruppen/fraktion-2025/)!**

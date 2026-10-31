@@ -8,7 +8,6 @@ timeline:
     note: "Der Antrag wurde im Ausschuss für Mobilität, Umwelt und Klimaschutz (MUK) beraten und angenommen. Er wurde dahingehend verändert, die Beschlusskontrolle für die Ausschüsse in der Beschlusskontrolle im Rat aufzunehmen."
   - date: 2025-11-13
     status: eingereicht
-    note: "Der Antrag wurde bei der Verwaltung eingereicht."
 ---
 
 Der Ausschuss für Mobilität, Umweltschutz und Klimaschutz möge beschließen:

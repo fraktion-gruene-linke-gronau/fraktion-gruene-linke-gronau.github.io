@@ -8,7 +8,6 @@ timeline:
     note: "Der Antrag wurde im Stadtrat beraten als Einstieg in das Thema Hitzeschutz in den Ausschuss für Mobilität, Umwelt und Klimaschutz (MUK) verwiesen."
   - date: 2026-09-09
     status: eingereicht
-    note: "Der Antrag wurde bei der Verwaltung eingereicht."
 ---
 
 Die Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE beantragt:

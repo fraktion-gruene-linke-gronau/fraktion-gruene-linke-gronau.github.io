@@ -20,12 +20,14 @@
     <div class="initiative-detail__body prose">
       {{ .Content }}
 
-      <p>
-        <a class="button" href="/documents/{{ .File.BaseFileName }}.pdf" target="_blank">
-          <span class="material-symbols-outlined" aria-hidden="true">download</span>
-          {{ .Params.kind | humanize }} als PDF herunterladen
-        </a>
-      </p>
+      {{- if (.Params.download | default true) -}}
+        <p>
+          <a class="button" href="/documents/{{ .File.BaseFileName }}.pdf" target="_blank">
+            <span class="material-symbols-outlined" aria-hidden="true">download</span>
+            {{ .Params.kind | humanize }} als PDF herunterladen
+          </a>
+        </p>
+      {{- end -}}
     </div>
 
     {{- $kind_titles := dict
@@ -46,6 +48,9 @@
                   {{ partial "initiative-status-badge.html" .status }}
                   {{- if isset . "ris" -}}
                     <a class="text-link" href="{{ .ris }}" target="_blank" rel="noopener noreferrer">Vorgang im RIS <span aria-hidden="true">↗</span></a>
+                  {{- end -}}
+                  {{- if eq .status "beantwortet" -}}
+                    <a class="text-link" href="{{ .ris_antwort }}" target="_blank" rel="noopener noreferrer">Antwort der Verwaltung <span aria-hidden="true">↗</span></a>
                   {{- end -}}
                 </div>
                 {{- if eq .status "eingereicht" -}}

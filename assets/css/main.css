@@ -201,7 +201,7 @@ img[src$='#center'] { display: block; margin: 0 auto; }
 .initiative-status-badge .material-symbols-outlined { font-size: .95rem; }
 .initiative-status-badge--eingereicht { background: var(--color-status-submitted-background); color: var(--color-status-submitted-text); }
 .initiative-status-badge--vertagt, .initiative-status-badge--verwiesen { background: var(--color-status-in-progress-background); color: var(--color-status-in-progress-text); }
-.initiative-status-badge--angenommen { background: var(--color-status-success-background); color: var(--color-status-success-text); }
+.initiative-status-badge--angenommen, .initiative-status-badge--beantwortet { background: var(--color-status-success-background); color: var(--color-status-success-text); }
 .initiative-status-badge--abgelehnt { background: var(--color-status-rejected-background); color: var(--color-status-rejected-text); }
 .empty-state { background: var(--color-surface-raised); border: 1px dashed var(--color-border-empty-state); color: var(--color-text-secondary); grid-column: 1 / -1; padding: 2rem; }
 

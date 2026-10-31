@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{- $memberCounts := partial "member-counts.html" . -}}
   <section class="hero">
     <div class="hero-copy prose-flow">
       <p class="eyebrow">Kommunalpolitik in Gronau</p>
@@ -13,8 +14,8 @@
   </section>
 
   <section class="stat-row" aria-label="Unsere Fraktion in Zahlen">
-    <div><strong>5</strong><span>Ratsmitglieder</span></div>
-    <div><strong>19</strong><span>sachkundige Bürger*innen</span></div>
+    <div><strong>{{ index $memberCounts "RM" }}</strong><span>Ratsmitglieder</span></div>
+    <div><strong>{{ index $memberCounts "sB" }}</strong><span>sachkundige Bürger*innen</span></div>
     <div><strong>2</strong><span>Parteien</span></div>
     <div><strong>1</strong><span>Fraktion</span></div>
   </section>

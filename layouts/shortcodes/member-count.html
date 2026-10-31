@@ -1,0 +1,7 @@
+{{- $counts := partial "member-counts.html" . -}}
+{{- $type := .Get "type" -}}
+{{- if not (in (slice "RM" "sB" "total") $type) -}}
+  {{- errorf "Unknown member-count type %q on %s; expected RM, sB, or total" $type .Page.Path -}}
+{{- else -}}
+  {{- index $counts $type -}}
+{{- end -}}

@@ -4,7 +4,7 @@ description: "Wie die Fraktion ihre politische Arbeit organisiert."
 eyebrow: "Wie wir arbeiten"
 ---
 
-Unsere Fraktion besteht derzeit aus 24 [Mitgliedern](/mitglieder) (5 Ratsmitglieder und 19 sachkundige Bürger\*innen). Auf dieser Seite wollen wir kurz unsere fraktionsinternen Strukturen vorstellen, die maßgeblich den politischen Entscheidungsprozess bestimmen.
+Unsere Fraktion besteht derzeit aus {{< member-count type="total" >}} [Mitgliedern](/mitglieder) ({{< member-count type="RM" >}} Ratsmitglieder und {{< member-count type="sB" >}} sachkundige Bürger\*innen). Auf dieser Seite wollen wir kurz unsere fraktionsinternen Strukturen vorstellen, die maßgeblich den politischen Entscheidungsprozess bestimmen.
 
 ![Organigramm der Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE](/images/fraktionsstruktur.svg#center)
 

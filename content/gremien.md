@@ -6,7 +6,7 @@ eyebrow: "Wo wir verhandeln"
 
 ## Stadtrat
 
-Der Stadtrat ist das zentrale Entscheidungsorgan der Gronauer Politik. Seine Mitglieder werden regelmäßig in den Kommunalwahlen gewählt, zuletzt am 14.09.2025. Sämtliche politische Entscheidungen werden hier getroffen und seine Entscheidungen haben direkten Einfluss auf das Leben der Menschen in Gronau. Im Stadtrat besteht unsere Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE momentan aus fünf Personen: Viktoria Weiß, Klaus Bieber, Suat Dal, Laura Meiser und Fabian Damken.
+Der Stadtrat ist das zentrale Entscheidungsorgan der Gronauer Politik. Seine Mitglieder werden regelmäßig in den Kommunalwahlen gewählt, zuletzt am 14.09.2025. Sämtliche politische Entscheidungen werden hier getroffen und seine Entscheidungen haben direkten Einfluss auf das Leben der Menschen in Gronau. Im Stadtrat besteht unsere Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE momentan aus {{< member-count type="RM" >}} Personen: Viktoria Weiß, Klaus Bieber, Suat Dal, Laura Meiser und Fabian Damken.
 
 ## Ausschüsse
 

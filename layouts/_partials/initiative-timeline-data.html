@@ -1,0 +1,18 @@
+{{- $timeline := .Params.timeline -}}
+{{- if not $timeline -}}
+  {{- errorf "Initiative %q has no timeline from which to determine its dates and status" .Path -}}
+{{- else -}}
+  {{- $ascending := sort $timeline "date" "asc" -}}
+  {{- $descending := sort $timeline "date" "desc" -}}
+  {{- $first := index $ascending 0 -}}
+  {{- $latest := index $descending 0 -}}
+  {{- if not $first.date -}}
+    {{- errorf "Earliest timeline entry for initiative %q has no date" .Path -}}
+  {{- else if not $latest.date -}}
+    {{- errorf "Latest timeline entry for initiative %q has no date" .Path -}}
+  {{- else if not $latest.status -}}
+    {{- errorf "Latest timeline entry for initiative %q has no status" .Path -}}
+  {{- else -}}
+    {{- return (dict "submitted" $first.date "updated" $latest.date "status" $latest.status) -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,35 @@
+{{- $name := .Get "name" -}}
+{{- $nameParts := split $name " " -}}
+{{- $initials := printf "%s%s" (substr (index $nameParts 0) 0 1) (substr (index $nameParts 1) 0 1) | upper -}}
+{{- $party := .Get "party" -}}
+{{- $partyLogo := "" -}}
+{{- $partyName := "" -}}
+{{- if eq $party "gruene" -}}
+  {{- $partyLogo = "/images/sonnenblume.svg" -}}
+  {{- $partyName = "BÜNDNIS 90/DIE GRÜNEN" -}}
+{{- else if eq $party "linke" -}}
+  {{- $partyLogo = "/images/die-linke.svg" -}}
+  {{- $partyName = "DIE LINKE" -}}
+{{- else if $party -}}
+  {{- errorf "Unknown party %q in member shortcode on %s" $party .Page.Path -}}
+{{- end -}}
+<article class="member-profile" id="{{ $name | anchorize }}">
+  {{- with $partyLogo }}
+    <img class="member-profile__party" src="{{ . }}" alt="{{ printf "Mitglied von %s" $partyName }}" loading="lazy" decoding="async">
+  {{- end }}
+  {{- with .Get "photo" }}
+    <img class="member-profile__portrait" src="{{ . }}" alt="Porträt von {{ $name }}" loading="lazy" decoding="async">
+  {{- else }}
+    <span class="member-profile__placeholder" aria-hidden="true">{{ $initials }}</span>
+  {{- end }}
+  <div class="member-profile__details">
+    <div class="member-profile__heading">
+      <h3>{{ $name }}</h3>
+      {{ with .Get "role" }}<span class="member-profile__badge">{{ . }}</span>{{ end }}
+    </div>
+    <div class="member-profile__roles">
+      {{ with .Get "ordinary" }}<p><strong>Ordentlich</strong>{{ . }}</p>{{ end }}
+      {{ with .Get "substitute" }}<p><strong>Vertretend</strong>{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</article>

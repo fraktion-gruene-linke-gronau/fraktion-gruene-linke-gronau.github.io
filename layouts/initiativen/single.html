@@ -1,0 +1,54 @@
+{{ define "main" }}
+  <article class="initiative-detail prose-flow">
+    <header class="initiative-detail__header prose-flow">
+      <a class="back-link" href="{{ relref . "/initiativen" }}">← Alle Anträge und Anfragen</a>
+      {{- $timeline := partial "initiative-timeline-data.html" . -}}
+      <div class="initiative-detail__meta">
+        {{ partial "initiative-type-badge.html" . }}
+        <a href="#timeline-title">{{ partial "initiative-status-badge.html" $timeline.status }}</a>
+        <span>
+          <time datetime="{{ $timeline.submitted | time.Format "2006-01-02" }}">{{ $timeline.submitted | time.Format ":date_long" }}</time>
+          {{- if not (eq $timeline.updated $timeline.submitted) -}}
+          , zuletzt aktualisiert am <time datetime="{{ $timeline.updated | time.Format "2006-01-02" }}">{{ $timeline.updated | time.Format ":date_long" }}</time>
+          {{- end -}}
+        </span>
+      </div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="initiative-detail__lead">{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="initiative-detail__body prose">
+      {{ .Content }}
+
+      <p>
+        <a class="button" href="/documents/{{ .File.BaseFileName }}.pdf" target="_blank">
+          <span class="material-symbols-outlined" aria-hidden="true">download</span>
+          Original als PDF herunterladen
+        </a>
+      </p>
+    </div>
+
+    {{ with .Params.timeline }}
+      <section class="timeline prose-flow" aria-labelledby="timeline-title">
+        <h2 id="timeline-title">Bisheriger Verlauf</h2>
+        <ol class="timeline-list prose-flow">
+          {{ range . }}
+            <li class="timeline-entry">
+              <span class="timeline-entry__dot" aria-hidden="true"></span>
+              <div class="timeline-entry__content prose-flow">
+                <div class="timeline-entry__heading">
+                  <time datetime="{{ .date | time.Format "2006-01-02" }}">{{ .date | time.Format ":date_long" }}</time>
+                  {{ partial "initiative-status-badge.html" .status }}
+                  {{- if isset . "ris" -}}
+                    <a class="text-link" href="{{ .ris }}" target="_blank" rel="noopener noreferrer">Vorgang im RIS <span aria-hidden="true">↗</span></a>
+                  {{- end -}}
+                </div>
+                <p>{{ .note | default "" }}</p>
+              </div>
+            </li>
+          {{ end }}
+        </ol>
+      </section>
+    {{ end }}
+  </article>
+{{ end }}

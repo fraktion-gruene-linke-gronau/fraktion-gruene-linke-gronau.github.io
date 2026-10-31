@@ -1,0 +1,35 @@
+<article class="roster-card">
+  <h3 class="roster-card__title"><a href="{{ .Get "url" }}" target="_blank" rel="noopener noreferrer">{{ .Get "name" }}</a></h3>
+  <div class="roster-card__sections roster-card__sections--columns">
+    {{- $ordinary := split (.Get "ordinary") "|" }}
+    {{- $substitute := split (.Get "substitute") "|" }}
+    <section class="roster-section">
+      <h4 class="roster-section__title">Ordentlich</h4>
+      <ul class="roster-member-list">
+        {{- if (.Get "ordinary") }}
+          {{- with .Get "ordinary" }}
+            {{- range $ordinary }}
+              <li class="roster-member">{{ . }}</li>
+            {{- end }}
+          {{- end }}
+        {{- else }}
+          <li class="roster-empty">{{ .Get "ordinary_empty" | default "vakant" }}</li>
+        {{- end }}
+      </ul>
+    </section>
+    <section class="roster-section">
+      <h4 class="roster-section__title">Vertretend</h4>
+      <ul class="roster-member-list">
+        {{- if (.Get "substitute") }}
+          {{- with .Get "substitute" }}
+            {{- range $substitute }}
+              <li class="roster-member">{{ . }}</li>
+            {{- end }}
+          {{- end }}
+        {{- else }}
+          <li class="roster-empty">{{ .Get "substitute_empty" | default "vakant" }}</li>
+        {{- end }}
+      </ul>
+    </section>
+  </div>
+</article>

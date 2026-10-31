@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <article class="prose page-content">
+    <p class="eyebrow">Mitglied der Fraktion</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.role }}<p class="member-role">{{ . }}</p>{{ end }}
+    {{ .Content }}
+  </article>
+{{ end }}

@@ -1,0 +1,15 @@
+<a class="initiative-card prose-flow" href="{{ .RelPermalink }}">
+  {{- $timeline := partial "initiative-timeline-data.html" . -}}
+  <div class="initiative-card__top">
+    <div class="initiative-card__badges">
+      {{ partial "initiative-type-badge.html" . }}
+      {{ partial "initiative-status-badge.html" $timeline.status }}
+    </div>
+    <div class="initiative-card__dates">
+      <span><time datetime="{{ $timeline.updated | time.Format "2006-01-02" }}">{{ $timeline.updated | time.Format ":date_long" }}</time></span>
+    </div>
+  </div>
+  <h2>{{ .LinkTitle }}</h2>
+  {{ with .Description }}<p>{{ . }}</p>{{ else }}<p>{{ .Summary | plainify | truncate 150 }}</p>{{ end }}
+  <span class="text-link initiative-card__link">Verlauf ansehen <span aria-hidden="true">→</span></span>
+</a>

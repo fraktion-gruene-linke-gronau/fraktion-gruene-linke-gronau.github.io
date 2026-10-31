@@ -1,0 +1,42 @@
+{{- $boards := slice
+  (dict
+    "title" "Aufsichtsrat"
+    "url" (.Get "supervisory_url" | default "#")
+    "ordinary" (.Get "supervisory_regular")
+    "substitute" (.Get "supervisory_substitute")
+    "empty" (.Get "supervisory_empty")
+  )
+  (dict
+    "title" "Gesellschafterversammlung"
+    "url" (.Get "shareholder_url" | default "#")
+    "ordinary" (.Get "shareholder_regular")
+    "substitute" (.Get "shareholder_substitute")
+    "empty" (.Get "shareholder_empty")
+  )
+-}}
+<article class="roster-card">
+  <h3 class="roster-card__title">{{ .Get "name" }}</h3>
+  <div class="roster-card__sections">
+    {{- range $boards }}
+      <section class="roster-section">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"><h4 class="roster-section__title">{{ .title }}</h4></a>
+        {{- if .empty }}
+          <p class="roster-empty">{{ .empty }}</p>
+        {{- else }}
+          {{- with .ordinary }}
+            <p class="roster-assignment">
+              <span class="roster-member">{{ . }}</span>
+              <span class="company-member-badge company-member-badge--ordinary">Ordentlich</span>
+            </p>
+          {{- end }}
+          {{- with .substitute }}
+            <p class="roster-assignment">
+              <span class="roster-member">{{ . }}</span>
+              <span class="company-member-badge company-member-badge--substitute">Vertretend</span>
+            </p>
+          {{- end }}
+        {{- end }}
+      </section>
+    {{- end }}
+  </div>
+</article>

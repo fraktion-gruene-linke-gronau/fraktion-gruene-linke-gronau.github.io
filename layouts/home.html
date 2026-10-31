@@ -1,0 +1,83 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="hero-copy prose-flow">
+      <p class="eyebrow">Kommunalpolitik in Gronau</p>
+      <h1>{{ .Title }}</h1>
+      <div class="hero-intro prose-flow">{{ .Content }}</div>
+      <a class="button" href="{{ relref . "/mitglieder" }}">Unsere Mitglieder <span aria-hidden="true">→</span></a>
+    </div>
+    <figure class="hero-photo">
+      <img src="/images/fraktion-gronau.jpg" alt="Ratsmitglieder der Fraktion vor dem Fraktionsbüro" fetchpriority="high">
+      <figcaption>Einige Mitglieder der Fraktion vor dem Fraktionsbüro (November 2025).</figcaption>
+    </figure>
+  </section>
+
+  <section class="stat-row" aria-label="Unsere Fraktion in Zahlen">
+    <div><strong>5</strong><span>Ratsmitglieder</span></div>
+    <div><strong>19</strong><span>sachkundige Bürger*innen</span></div>
+    <div><strong>2</strong><span>Parteien</span></div>
+    <div><strong>1</strong><span>Fraktion</span></div>
+  </section>
+
+  <section class="home-section prose-flow">
+    <div class="section-heading">
+      <div class="prose-flow">
+        <p class="eyebrow">Einblicke in unsere Arbeit</p>
+        <h2>Wer wir sind und wie wir arbeiten</h2>
+      </div>
+    </div>
+    <div class="quick-links">
+      <a class="quick-link" href="{{ relref . "/mitglieder" }}">
+        <span class="material-symbols-outlined quick-link__icon" aria-hidden="true">groups</span>
+        <span><strong>Mitglieder</strong><small>Ratsmitglieder, sachkundige Bürger*innen</small></span>
+        <span class="page-list__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="quick-link" href="{{ relref . "/struktur" }}">
+        <span class="material-symbols-outlined quick-link__icon" aria-hidden="true">diversity_3</span>
+        <span><strong>Struktur</strong><small>Fraktionssitzung, Vorstand und Arbeitskreise</small></span>
+        <span class="page-list__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="quick-link" href="{{ relref . "/gremien" }}">
+        <span class="material-symbols-outlined quick-link__icon" aria-hidden="true">forum</span>
+        <span><strong>Gremien</strong><small>Ausschüsse und weitere Mandate</small></span>
+        <span class="page-list__arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-section prose-flow" aria-labelledby="latest-initiatives">
+    <div class="section-heading">
+      <div class="prose-flow">
+        <p class="eyebrow">Was uns beschäftigt</p>
+        <h2 id="latest-initiatives">Aktuelle Anträge und Anfragen</h2>
+      </div>
+      <a class="text-link" href="{{ relref . "/initiativen" }}">Alle Anträge und Anfragen <span aria-hidden="true">→</span></a>
+    </div>
+    {{ with site.GetPage "/initiativen" }}
+      {{- $initiatives := slice -}}
+      {{- range .Pages -}}
+        {{- $timeline := partial "initiative-timeline-data.html" . -}}
+        {{- $initiatives = $initiatives | append (dict "page" . "updated" $timeline.updated) -}}
+      {{- end -}}
+      <div class="initiative-grid">
+        {{ range first 3 (sort $initiatives "updated" "desc") }}
+          {{ partial "initiative-card.html" .page }}
+        {{ else }}
+          <p class="empty-state">Aktuell sind keine Anträge oder Anfragen veröffentlicht.</p>
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
+
+  <section class="about-strip prose-flow">
+    <p class="eyebrow">Im Gespräch bleiben</p>
+    <div class="prose-flow">
+      <h2>Fragen oder ein Anliegen?</h2>
+      <p>Schreiben Sie uns.</p>
+    </div>
+    <a class="button button--light" href="mailto:kontakt@fraktion-gruene-linke-gronau.de">
+      <span class="material-symbols-outlined button-icon" aria-hidden="true">mail</span>
+      Kontakt aufnehmen <span aria-hidden="true">→</span>
+    </a>
+  </section>
+{{ end }}

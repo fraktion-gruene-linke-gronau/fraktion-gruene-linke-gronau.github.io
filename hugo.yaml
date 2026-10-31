@@ -1,0 +1,31 @@
+baseURL: 'https://fraktion-gruene-linke-gronau.de/'
+locale: 'de-DE'
+defaultContentLanguage: 'de'
+title: 'Fraktion Grüne/Linke Gronau'
+enableRobotsTXT: true
+
+module:
+  hugoVersion:
+    extended: false
+    min: '0.146.0'
+
+params:
+  description: 'Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE im Rat der Stadt Gronau (Westf.)'
+
+menus:
+  main:
+    - name: 'Startseite'
+      pageRef: '/'
+      weight: 10
+    - name: 'Mitglieder'
+      pageRef: '/mitglieder'
+      weight: 20
+    - name: 'Struktur'
+      pageRef: '/struktur'
+      weight: 30
+    - name: 'Gremien'
+      pageRef: '/gremien'
+      weight: 40
+    - name: 'Anträge & Anfragen'
+      pageRef: '/initiativen'
+      weight: 50

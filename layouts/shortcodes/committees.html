@@ -1,0 +1,10 @@
+{{- $committees := .Page.Params.committees -}}
+{{- if not $committees -}}
+  {{- errorf "Committee list is missing or empty on %s" .Page.Path -}}
+{{- else -}}
+  <div class="roster-grid">
+    {{- range $committees -}}
+      {{- partial "committee-card.html" . -}}
+    {{- end -}}
+  </div>
+{{- end -}}

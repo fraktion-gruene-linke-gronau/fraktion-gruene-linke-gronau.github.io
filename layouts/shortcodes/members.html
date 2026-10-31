@@ -1,0 +1,9 @@
+{{- $type := .Get "type" -}}
+{{- $members := index .Page.Params $type -}}
+{{- if not $members -}}
+  {{- errorf "Members list %q is missing or empty on %s" $type .Page.Path -}}
+{{- else -}}
+  {{- range $members -}}
+    {{- partial "member-profile.html" (merge . (dict "Page" $.Page)) -}}
+  {{- end -}}
+{{- end -}}

@@ -2,13 +2,7 @@
 {{- if not $membersPage -}}
   {{- errorf "Unable to calculate member counts: page /mitglieder was not found" -}}
 {{- else -}}
-  {{- $sections := split $membersPage.RawContent `## Sachkundige Bürger\*innen` -}}
-  {{- if ne (len $sections) 2 -}}
-    {{- errorf "Unable to calculate member counts: expected the Sachkundige Bürger*innen section in %q" $membersPage.Path -}}
-  {{- else -}}
-    {{- $memberShortcode := `\{\{<\s*member\s` -}}
-    {{- $rm := len (findRE $memberShortcode (index $sections 0)) -}}
-    {{- $sb := len (findRE $memberShortcode (index $sections 1)) -}}
-    {{- return (dict "RM" $rm "sB" $sb "total" (add $rm $sb)) -}}
-  {{- end -}}
+  {{- $rm := $membersPage.Params.RM -}}
+  {{- $sb := $membersPage.Params.sB -}}
+  {{- return (dict "RM" (len $rm) "sB" (len $sb) "total" (add (len $rm) (len $sb))) -}}
 {{- end -}}

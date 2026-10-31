@@ -1,21 +1,22 @@
+{{- $company := . -}}
 {{- $boards := slice
   (dict
     "title" "Aufsichtsrat"
-    "url" (.Get "supervisory_url" | default "#")
-    "ordinary" (.Get "supervisory_regular")
-    "substitute" (.Get "supervisory_substitute")
-    "empty" (.Get "supervisory_empty")
+    "url" ($company.supervisory_url | default "#")
+    "ordinary" $company.supervisory_regular
+    "substitute" $company.supervisory_substitute
+    "empty" $company.supervisory_empty
   )
   (dict
     "title" "Gesellschafterversammlung"
-    "url" (.Get "shareholder_url" | default "#")
-    "ordinary" (.Get "shareholder_regular")
-    "substitute" (.Get "shareholder_substitute")
-    "empty" (.Get "shareholder_empty")
+    "url" ($company.shareholder_url | default "#")
+    "ordinary" $company.shareholder_regular
+    "substitute" $company.shareholder_substitute
+    "empty" $company.shareholder_empty
   )
 -}}
 <article class="roster-card surface-card">
-  <h3 class="roster-card__title">{{ .Get "name" }}</h3>
+  <h3 class="roster-card__title">{{ $company.name }}</h3>
   <div class="roster-card__sections">
     {{- range $boards }}
       <section class="roster-section">

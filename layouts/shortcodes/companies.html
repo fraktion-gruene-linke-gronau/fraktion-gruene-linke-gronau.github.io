@@ -1,0 +1,10 @@
+{{- $companies := .Page.Params.companies -}}
+{{- if not $companies -}}
+  {{- errorf "Company list is missing or empty on %s" .Page.Path -}}
+{{- else -}}
+  <div class="roster-grid">
+    {{- range $companies -}}
+      {{- partial "company-card.html" . -}}
+    {{- end -}}
+  </div>
+{{- end -}}

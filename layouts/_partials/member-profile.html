@@ -1,7 +1,11 @@
-{{- $name := .Get "name" -}}
+{{- $member := . -}}
+{{- $name := index $member "name" -}}
+{{- if not $name -}}
+  {{- errorf "Member entry on %s has no name" .Page.Path -}}
+{{- end -}}
 {{- $nameParts := split $name " " -}}
-{{- $initials := printf "%s%s" (substr (index $nameParts 0) 0 1) (substr (index $nameParts 1) 0 1) | upper -}}
-{{- $party := .Get "party" -}}
+{{- $initials := printf "%s%s" (substr (index $nameParts 0) 0 1) (substr (index $nameParts (sub (len $nameParts) 1)) 0 1) | upper -}}
+{{- $party := index $member "party" -}}
 {{- $partyLogo := "" -}}
 {{- $partyName := "" -}}
 {{- if eq $party "gruene" -}}
@@ -11,13 +15,13 @@
   {{- $partyLogo = "/images/die-linke.svg" -}}
   {{- $partyName = "DIE LINKE" -}}
 {{- else if $party -}}
-  {{- errorf "Unknown party %q in member shortcode on %s" $party .Page.Path -}}
+  {{- errorf "Unknown party %q for member %q" $party $name -}}
 {{- end -}}
 <article class="member-profile surface-card" id="{{ $name | anchorize }}">
   {{- with $partyLogo }}
     <img class="member-profile__party" src="{{ . }}" alt="{{ printf "Mitglied von %s" $partyName }}" loading="lazy" decoding="async">
   {{- end }}
-  {{- with .Get "photo" }}
+  {{- with index $member "photo" }}
     <img class="member-profile__portrait" src="{{ . }}" alt="Porträt von {{ $name }}" loading="lazy" decoding="async">
   {{- else }}
     <span class="member-profile__placeholder" aria-hidden="true">{{ $initials }}</span>
@@ -25,11 +29,11 @@
   <div class="member-profile__details">
     <div class="member-profile__heading">
       <h3>{{ $name }}</h3>
-      {{ with .Get "role" }}<span class="member-profile__badge">{{ . }}</span>{{ end }}
+      {{ with index $member "role" }}<span class="member-profile__badge">{{ . }}</span>{{ end }}
     </div>
     <div class="member-profile__roles">
-      {{ with .Get "ordinary" }}<p><strong>Ordentlich</strong>{{ . }}</p>{{ end }}
-      {{ with .Get "substitute" }}<p><strong>Vertretend</strong>{{ . }}</p>{{ end }}
+      {{ with index $member "ordinary" }}<p><strong>Ordentlich</strong>{{ . }}</p>{{ end }}
+      {{ with index $member "substitute" }}<p><strong>Vertretend</strong>{{ . }}</p>{{ end }}
     </div>
   </div>
 </article>

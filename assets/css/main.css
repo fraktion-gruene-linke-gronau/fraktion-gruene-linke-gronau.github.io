@@ -135,7 +135,7 @@ img[src$='#center'] { display: block; margin: 0 auto; }
 .main-nav__dropdown > details > ul { background: var(--color-surface-footer); border: 1px solid var(--color-border-navigation); border-radius: .7rem; box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .2); display: flex; flex-direction: column; gap: .15rem; list-style: none; margin: .35rem 0 0; min-width: 13rem; padding: .4rem; position: absolute; right: 0; }
 .main-nav__dropdown > details > ul a { border-radius: .4rem; font-size: .82rem; padding: .6rem .7rem; }
 .main-nav__dropdown > details > ul a:hover { background: var(--color-surface-navigation-hover); }
-@media (max-width: 780px) {
+@media (max-width: 920px) {
  .header-inner { flex-wrap: wrap; position: relative; }
  .main-nav { margin-left: auto; max-width: 100%; width: auto; }
  .main-nav__menu { display: block; }

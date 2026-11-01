@@ -34,19 +34,10 @@
       {{- else -}}
         {{- errorf "Unknown roster group type %q for group %q" $group.type $assignment.group -}}
       {{- end -}}
-      {{- $hint := or $group.name $group.id -}}
-      {{- if eq $group.type "committee" -}}
-        {{- if ne $group.name $group.id -}}
-          {{- $hint = printf "%s" $group.name -}}
-        {{- end -}}
-      {{- else if eq $group.type "company" -}}
-        {{- $boardName := (index site.Params.roster.boards $assignment.board).name -}}
-        {{- $hint = printf "%s: %s" $boardName $group.name -}}
-      {{- end -}}
-      {{- $item := dict "label" $label "hint" $hint "title" $assignment.title -}}
+      {{- with $assignment.title }}{{ $label = printf "%s (%s)" $label . }}{{ end -}}
       {{- $key := printf "%s-%s" $category $assignment.seat -}}
       {{- $current := index $labels $key -}}
-      {{- $current = $current | append $item -}}
+      {{- $current = $current | append $label -}}
       {{- $labels = merge $labels (dict $key $current) -}}
     {{- end -}}
   {{- end -}}

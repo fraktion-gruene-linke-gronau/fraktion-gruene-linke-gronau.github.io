@@ -10,7 +10,7 @@ on:
       - completed
 
 jobs:
-  crawl_for_broken_links:
+  crawl-for-broken-links:
     runs-on: ubuntu-latest
     permissions: {}
     steps:
@@ -18,5 +18,6 @@ jobs:
         uses: ScholliYT/Broken-Links-Crawler-Action@v3
         with:
           website_url: 'https://fraktion-gruene-linke-gronau.de'
+          exclude_url_prefix: 'mailto:,tel:,https://www.dielinke-gronau.de/'
           verbose: true
           max_depth: 1

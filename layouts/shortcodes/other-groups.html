@@ -1,0 +1,27 @@
+{{- $groups := where site.Params.roster.groups "type" "other" -}}
+{{- if not $groups -}}
+  {{- errorf "Other roster groups are missing in site params" -}}
+{{- end -}}
+
+<table>
+  <thead>
+    <tr><th>Gremium</th><th>Ordentlich</th><th>Vertretend</th></tr>
+  </thead>
+  <tbody>
+    {{- range $groups }}
+      {{- $ordinary := partial "roster-members.html" (dict "group" .id "seat" "ordinary") -}}
+      {{- $substitute := partial "roster-members.html" (dict "group" .id "seat" "substitute") -}}
+      <tr>
+        <td>
+          {{- if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }} ({{ .id }})</a>
+          {{- else }}
+            {{ .name }} ({{ .id }})
+          {{- end }}
+        </td>
+        <td>{{ if $ordinary }}{{ delimit $ordinary ", " }}{{ else }}—{{ end }}</td>
+        <td>{{ if $substitute }}{{ delimit $substitute ", " }}{{ else }}—{{ end }}</td>
+      </tr>
+    {{- end }}
+  </tbody>
+</table>

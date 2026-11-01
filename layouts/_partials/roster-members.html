@@ -1,0 +1,16 @@
+{{- $members := slice -}}
+{{- range site.Params.roster.members -}}
+  {{- $member := . -}}
+  {{- range $member.assignments -}}
+    {{- if and
+      (eq .group $.group)
+      (eq .seat $.seat)
+      (eq (default "" .board) (default "" $.board))
+    -}}
+      {{- $name := $member.name -}}
+      {{- with .title }}{{ $name = printf "%s (%s)" $name . }}{{ end -}}
+      {{- $members = $members | append $name -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $members -}}

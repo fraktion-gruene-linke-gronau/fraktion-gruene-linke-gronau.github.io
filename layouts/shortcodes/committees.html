@@ -1,10 +1,27 @@
-{{- $committees := .Page.Params.committees -}}
+{{- $committees := where site.Params.roster.groups "type" "committee" -}}
 {{- if not $committees -}}
-  {{- errorf "Committee list is missing or empty on %s" .Page.Path -}}
-{{- else -}}
-  <div class="roster-grid">
-    {{- range $committees -}}
-      {{- partial "committee-card.html" . -}}
-    {{- end -}}
-  </div>
+  {{- errorf "Committee list is missing or empty in site params" -}}
 {{- end -}}
+
+<div class="roster-grid">
+  {{- range $committees -}}
+    {{- $committee := . -}}
+    {{- $ordinary := partial "roster-members.html" (dict "group" $committee.id "seat" "ordinary") -}}
+    {{- $substitute := partial "roster-members.html" (dict "group" $committee.id "seat" "substitute") -}}
+    <article class="roster-card surface-card">
+      <h3 class="roster-card__title"><a href="{{ $committee.url }}" target="_blank" rel="noopener noreferrer">{{ $committee.name }} ({{ $committee.id }})</a></h3>
+      <div class="roster-card__sections roster-card__sections--columns">
+        {{ partial "committee-seats.html" (dict
+          "title" "Ordentlich"
+          "members" $ordinary
+          "empty" "vakant"
+        ) }}
+        {{ partial "committee-seats.html" (dict
+          "title" "Vertretend"
+          "members" $substitute
+          "empty" ($committee.substitute_empty | default "vakant")
+        ) }}
+      </div>
+    </article>
+  {{- end -}}
+</div>

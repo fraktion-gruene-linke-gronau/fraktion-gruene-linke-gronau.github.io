@@ -11,6 +11,333 @@ module:
 
 params:
   description: 'Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE im Rat der Stadt Gronau (Westf.)'
+  roster:
+    boards:
+      supervisory:
+        name: Aufsichtsrat
+        abbr: AR
+      shareholder:
+        name: Gesellschafterversammlung
+        abbr: GV
+    groups:
+      - id: HFA
+        type: committee
+        name: Haupt- und Finanzausschuss
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZQDLMG6fLY_4q44_fpkj5OQ"
+      - id: SBK
+        type: committee
+        name: Ausschuss für Schule, Bildung und Kultur
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZVsvXrWbabhTNOkEX_5_b5E"
+      - id: GMVSE
+        type: committee
+        name: Ausschuss für Gesundheit, medizinische Versorgung, Sport und Ehrenamt
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZa0R3zKy5EqWushw0f3E8Gc"
+      - id: SBS
+        type: committee
+        name: Ausschuss für Soziales, Bevölkerungsentwicklung und strategische Sozialplanung
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSd3U7j6FerJQlrWfqXtNPw"
+      - id: PBD
+        type: committee
+        name: Ausschuss für Planen, Bauen und Denkmalschutz
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZeqrnzXc4n9m0oCrDUJCSy4"
+      - id: MUK
+        type: committee
+        name: Ausschuss für Mobilität, Umwelt und Klimaschutz
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZasZeux7BVEhu5Xc3WZgrdw"
+      - id: ACI
+        type: committee
+        name: Ausschuss für Chancengerechtigkeit und Integration
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZeZKVVC4DwUzJwhGJf6TJUE"
+      - id: JHA
+        type: committee
+        name: Jugendhilfeausschuss
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZQ7mnupExXnAXCdGgAn56gY"
+        substitute_empty: "Keine Vertretung"
+      - id: WahlA
+        type: committee
+        name: Wahlausschuss
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSgrwi1SIrlYWqIqQEEXZTU"
+      - id: WahlPrA
+        type: committee
+        name: Wahlprüfungsausschuss
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZWKiYFXo890N-JT7VEUpWFw"
+      - id: RPA
+        type: committee
+        name: Rechnungsprüfungsausschuss
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZUEvrsEcCM1F3Gsr9wqzgYY"
+      - id: Ältestenrat
+        type: reference
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZVXeVlWfMGvDVYu9DeQqsT8"
+      - id: BaAbw
+        type: committee
+        name: Betriebsausschuss Abwasserwerk
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSvg5129NvTJGQJdM1iT0f8"
+      - id: SWG
+        type: company
+        name: Stadtwerke Gronau GmbH
+        boards:
+          - id: supervisory
+          - id: shareholder
+      - id: CH
+        type: company
+        name: Chance gGmbH
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZViBuIo91oj8Txd_OubT9y0"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSgwdRSUcdRrxoTlNapye8M"
+      - id: GfA
+        type: company
+        name: GfA Gesellschaft für Arbeitsförderung
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZaMeFBWFUbg9PMQNfKJ8P8Q"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSejlzwzC42n9lraGjWdoW4"
+      - id: WTG
+        type: company
+        name: Wirtschaftsförderungsgesellschaft der Stadt Gronau mbH
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZeOY_Oj9-XvvnQjGGYf1kZM"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZYaqwomAOhhJxuJpM3vwVwA"
+      - id: RPM
+        type: company
+        name: rock’n’popmuseum GmbH
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZZ45np8AS3ffHVt9-VC-0Gc"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZWtdi_U8W3yF1WoxhF7XN5o"
+      - id: KB
+        type: company
+        name: Kulturbüro Gronau GmbH
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZdw7-uUdQvKrbDDvJXo2-6g"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZRksM3cY3GLn_AuTAM6MZGo"
+      - id: WGG
+        type: company
+        name: WGG Wohnbau- und Grundstücksgesellschaft der Stadt Gronau mbH & Co. KG
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZRC_SAYg7JFvOtxa9ERA_jE"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZbVJiING1RaPVkLV3xxunAY"
+      - id: WGG-Verwaltung
+        type: company
+        name: WGG Verwaltungsgesellschaft mbH
+        boards:
+          - id: supervisory
+            empty: "Diese Gesellschaft hat keinen Aufsichtsrat."
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZXdPRJuPKCxH2QuKERtrRsQ"
+      - id: QEG
+        type: company
+        name: Quartiersentwicklungsgesellschaft für die Innenstadt Gronau mbH
+        boards:
+          - id: supervisory
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZa0R0_JR68E6fOv6uJWacbY"
+          - id: shareholder
+            url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSAQ-_iLxQ6khHxc0ijNg7w"
+            empty: "Besteht nur aus dem Geschäftsführer, dem Bürgermeister sowie dem Vorsitzenden und dem stellvertretenden Vorsitzenden des Aufsichtsrates."
+      - id: EUREGIO-VV
+        type: other
+        name: EUREGIO-Verbandsversammlung
+      - id: TS
+        type: other
+        name: Beirat für Kultur, Touristik und Stadtmarketing
+        url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSlo-bkk2nS9uLZ3YuZf_WU"
+      - id: Sparkassenstiftung-Kuratorium
+        type: other
+        name: Kuratorium der Sparkassenstiftung für Gronau
+      - id: StGB
+        type: other
+        name: Mitgliederversammlung des Städte- und Gemeindebundes NRW
+    members:
+      - name: "Fabian Damken"
+        category: rm
+        role: Fraktionsvorsitzender
+        party: gruene
+        photo: "/images/mitglieder/fabian-damken.webp"
+        assignments:
+          - { group: HFA, seat: ordinary }
+          - { group: SBK, seat: ordinary }
+          - { group: WahlPrA, seat: ordinary }
+          - { group: Ältestenrat, seat: ordinary }
+          - { group: SWG, board: shareholder, seat: ordinary }
+          - { group: WGG, board: shareholder, seat: ordinary }
+          - { group: WGG-Verwaltung, board: shareholder, seat: ordinary }
+          - { group: WTG, board: shareholder, seat: ordinary }
+          - { group: RPA, seat: substitute }
+      - name: "Suat Dal"
+        category: rm
+        role: Fraktionsvorsitzender
+        party: linke
+        assignments:
+          - { group: HFA, seat: ordinary }
+          - { group: ACI, seat: ordinary }
+          - { group: BaAbw, seat: ordinary }
+          - { group: CH, board: shareholder, seat: ordinary }
+          - { group: GfA, board: shareholder, seat: ordinary }
+          - { group: KB, board: shareholder, seat: ordinary }
+          - { group: RPM, board: shareholder, seat: ordinary }
+          - { group: StGB, seat: ordinary }
+          - { group: Sparkassenstiftung-Kuratorium, seat: ordinary }
+          - { group: WTG, board: supervisory, seat: substitute }
+      - name: "Klaus Bieber"
+        category: rm
+        party: gruene
+        photo: "/images/mitglieder/klaus-bieber.webp"
+        assignments:
+          - { group: GMVSE, seat: ordinary }
+          - { group: RPA, seat: ordinary, title: stellvertretender Vorsitzender }
+          - { group: EUREGIO-VV, seat: ordinary }
+          - { group: HFA, seat: substitute }
+          - { group: SBK, seat: substitute }
+          - { group: WahlPrA, seat: substitute }
+          - { group: SWG, board: shareholder, seat: substitute }
+          - { group: WGG, board: shareholder, seat: substitute }
+          - { group: WGG-Verwaltung, board: shareholder, seat: substitute }
+          - { group: WTG, board: shareholder, seat: substitute }
+      - name: "Laura Meiser"
+        category: rm
+        party: gruene
+        assignments:
+          - { group: TS, seat: ordinary }
+          - { group: KB, board: supervisory, seat: ordinary, title: Vorsitzende }
+          - { group: RPM, board: supervisory, seat: ordinary, title: Vorsitzende }
+          - { group: SBS, seat: substitute }
+          - { group: ACI, seat: substitute }
+          - { group: BaAbw, seat: substitute }
+          - { group: KB, board: shareholder, seat: substitute }
+          - { group: RPM, board: shareholder, seat: substitute }
+          - { group: StGB, seat: substitute }
+      - name: "Viktoria Weiß"
+        category: rm
+        party: linke
+        assignments:
+          - { group: SBS, seat: ordinary }
+          - { group: HFA, seat: substitute }
+          - { group: GMVSE, seat: substitute }
+          - { group: CH, board: shareholder, seat: substitute }
+          - { group: GfA, board: shareholder, seat: substitute }
+      - name: "Andreas Raus"
+        category: sb
+        party: linke
+        assignments:
+          - { group: JHA, seat: ordinary }
+          - { group: CH, board: supervisory, seat: ordinary }
+          - { group: GfA, board: supervisory, seat: ordinary }
+      - name: "Britta Siepmann"
+        category: sb
+        assignments:
+          - { group: SBS, seat: ordinary }
+      - name: "Dieter Schwarze"
+        category: sb
+        party: gruene
+        photo: "/images/mitglieder/dieter-schwarze.webp"
+        assignments:
+          - { group: WahlA, seat: substitute }
+      - name: "Janis Bakenecker"
+        category: sb
+        party: linke
+        assignments:
+          - { group: GMVSE, seat: substitute }
+          - { group: RPA, seat: substitute }
+      - name: "Kasim Akbulut"
+        category: sb
+        party: linke
+        assignments:
+          - { group: WahlA, seat: ordinary }
+      - name: "Leon Epping"
+        category: sb
+        party: gruene
+        assignments:
+          - { group: MUK, seat: ordinary }
+          - { group: WGG, board: supervisory, seat: substitute }
+      - name: "Lisa Beerlage"
+        category: sb
+        party: linke
+        assignments:
+          - { group: SBK, seat: substitute }
+      - name: "Marita Wagner"
+        category: sb
+        party: linke
+        assignments:
+          - { group: SBK, seat: ordinary }
+          - { group: SBS, seat: substitute }
+          - { group: TS, seat: substitute }
+          - { group: KB, board: supervisory, seat: substitute }
+          - { group: RPM, board: supervisory, seat: substitute }
+          - { group: QEG, board: supervisory, seat: substitute }
+      - name: "Michael Raus"
+        category: sb
+        party: linke
+        assignments:
+          - { group: MUK, seat: ordinary }
+      - name: "Philipp Kirchner"
+        category: sb
+        party: gruene
+        assignments:
+          - { group: PBD, seat: ordinary }
+          - { group: MUK, seat: substitute }
+      - name: "Robert Brandt"
+        category: sb
+        party: linke
+        assignments:
+          - { group: PBD, seat: ordinary }
+          - { group: WGG, board: supervisory, seat: ordinary }
+          - { group: BaAbw, seat: substitute }
+          - { group: SWG, board: supervisory, seat: substitute }
+      - name: "Roy Pegel"
+        category: sb
+        party: linke
+        assignments:
+          - { group: MUK, seat: substitute }
+      - name: "Samir Atan"
+        category: sb
+        party: linke
+        assignments:
+          - { group: PBD, seat: substitute }
+          - { group: WahlPrA, seat: substitute }
+      - name: "Sarah Weweler"
+        category: sb
+        party: gruene
+        assignments:
+          - { group: WTG, board: supervisory, seat: ordinary }
+      - name: "Signe Schwarze"
+        category: sb
+        party: gruene
+        photo: "/images/mitglieder/signe-schwarze.webp"
+        assignments:
+          - { group: CH, board: supervisory, seat: substitute }
+          - { group: GfA, board: supervisory, seat: substitute }
+      - name: "Stefan Kuhlmann-Eckel"
+        category: sb
+        party: gruene
+        assignments:
+          - { group: BaAbw, seat: ordinary }
+          - { group: SWG, board: supervisory, seat: ordinary }
+          - { group: QEG, board: supervisory, seat: ordinary, title: Vorsitzender }
+      - name: "Tamino Senper"
+        category: sb
+        party: linke
+        assignments:
+          - { group: WahlPrA, seat: ordinary }
+      - name: "Wilhelm Figge"
+        category: sb
+        party: gruene
+        assignments:
+          - { group: PBD, seat: substitute }
+      - name: "Wolfgang Mazur"
+        category: sb
+        party: linke
+        assignments:
+          - { group: GMVSE, seat: ordinary }
+          - { group: RPA, seat: ordinary }
 
 menus:
   main:

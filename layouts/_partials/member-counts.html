@@ -1,8 +1,8 @@
-{{- $membersPage := site.GetPage "/mitglieder" -}}
-{{- if not $membersPage -}}
-  {{- errorf "Unable to calculate member counts: page /mitglieder was not found" -}}
-{{- else -}}
-  {{- $rm := $membersPage.Params.RM -}}
-  {{- $sb := $membersPage.Params.sB -}}
-  {{- return (dict "RM" (len $rm) "sB" (len $sb) "total" (add (len $rm) (len $sb))) -}}
+{{- $members := site.Params.roster.members -}}
+{{- if not $members -}}
+  {{- errorf "Unable to calculate member counts: roster members are missing from site params" -}}
 {{- end -}}
+
+{{- $rm := where $members "category" "rm" -}}
+{{- $sb := where $members "category" "sb" -}}
+{{- return (dict "RM" (len $rm) "sB" (len $sb) "total" (add (len $rm) (len $sb))) -}}

@@ -1,8 +1,9 @@
 {{- $member := . -}}
 {{- $name := index $member "name" -}}
 {{- if not $name -}}
-  {{- errorf "Member entry on %s has no name" .Page.Path -}}
+  {{- errorf "Member entry in roster has no name" -}}
 {{- end -}}
+{{- $assignments := partial "member-assignment-labels.html" $member -}}
 {{- $nameParts := split $name " " -}}
 {{- $initials := printf "%s%s" (substr (index $nameParts 0) 0 1) (substr (index $nameParts (sub (len $nameParts) 1)) 0 1) | upper -}}
 {{- $party := index $member "party" -}}
@@ -32,8 +33,8 @@
       {{ with index $member "role" }}<span class="member-profile__badge">{{ . }}</span>{{ end }}
     </div>
     <div class="member-profile__roles">
-      {{ with index $member "ordinary" }}<p><strong>Ordentlich</strong>{{ . }}</p>{{ end }}
-      {{ with index $member "substitute" }}<p><strong>Vertretend</strong>{{ . }}</p>{{ end }}
+      {{ with index $assignments "ordinary" }}<p><strong>Ordentlich</strong>{{ delimit . ", " }}</p>{{ end }}
+      {{ with index $assignments "substitute" }}<p><strong>Vertretend</strong>{{ delimit . ", " }}</p>{{ end }}
     </div>
   </div>
 </article>

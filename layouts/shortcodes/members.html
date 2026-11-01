@@ -1,9 +1,9 @@
-{{- $type := .Get "type" -}}
-{{- $members := index .Page.Params $type -}}
+{{- $category := .Get "category" -}}
+{{- $members := where site.Params.roster.members "category" $category -}}
 {{- if not $members -}}
-  {{- errorf "Members list %q is missing or empty on %s" $type .Page.Path -}}
+  {{- errorf "Members list %q is missing or empty in site params" $category -}}
 {{- else -}}
   {{- range $members -}}
-    {{- partial "member-profile.html" (merge . (dict "Page" $.Page)) -}}
+    {{- partial "member-card.html" . -}}
   {{- end -}}
 {{- end -}}

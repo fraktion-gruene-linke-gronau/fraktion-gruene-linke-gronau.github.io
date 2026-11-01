@@ -1,10 +1,28 @@
-{{- $companies := .Page.Params.companies -}}
+{{- $companies := where site.Params.roster.groups "type" "company" -}}
 {{- if not $companies -}}
-  {{- errorf "Company list is missing or empty on %s" .Page.Path -}}
-{{- else -}}
-  <div class="roster-grid">
-    {{- range $companies -}}
-      {{- partial "company-card.html" . -}}
-    {{- end -}}
-  </div>
+  {{- errorf "Company list is missing or empty in site params" -}}
 {{- end -}}
+
+<div class="roster-grid">
+  {{- range $companies -}}
+    {{- $company := . -}}
+    <article class="roster-card surface-card">
+    <h3 class="roster-card__title">{{ $company.name }} ({{ $company.id }})</h3>
+    <div class="roster-card__sections">
+      {{- range $company.boards }}
+        <section class="roster-section">
+          <a href="{{ .url | default "#" }}" target="_blank" rel="noopener noreferrer"><h4 class="roster-section__title">{{ (index site.Params.roster.boards .id).name }}</h4></a>
+          {{- if .empty }}
+            <p class="roster-empty">{{ .empty }}</p>
+          {{- else }}
+            {{- $ordinary := partial "roster-members.html" (dict "group" $company.id "board" .id "seat" "ordinary") -}}
+            {{- $substitute := partial "roster-members.html" (dict "group" $company.id "board" .id "seat" "substitute") -}}
+            {{ partial "roster-assignment.html" (dict "member" (delimit $ordinary ", ") "kind" "ordinary" "label" "Ordentlich") }}
+            {{ partial "roster-assignment.html" (dict "member" (delimit $substitute ", ") "kind" "substitute" "label" "Vertretend") }}
+          {{- end }}
+        </section>
+      {{- end }}
+    </div>
+  </article>
+  {{- end -}}
+</div>

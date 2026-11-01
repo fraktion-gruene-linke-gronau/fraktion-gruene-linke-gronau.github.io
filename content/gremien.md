@@ -2,115 +2,6 @@
 title: "Gremien"
 description: "Besetzung der Ausschüsse weiteren Gremien durch unsere Fraktion"
 eyebrow: "Wo wir verhandeln"
-committees:
-  - name: "Haupt- und Finanzausschuss (HFA)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZQDLMG6fLY_4q44_fpkj5OQ"
-    ordinary: ["Fabian Damken", "Suat Dal"]
-    substitute: ["Klaus Bieber", "Laura Meiser"]
-  - name: "Schule, Bildung und Kultur (SBK)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZVsvXrWbabhTNOkEX_5_b5E"
-    ordinary: ["Fabian Damken", "Marita Wagner"]
-    substitute: ["Laura Meiser", "Lisa Beerlage"]
-  - name: "Gesundheit, medizinische Versorgung, Sport und Ehrenamt (GMVSE)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZa0R3zKy5EqWushw0f3E8Gc"
-    ordinary: ["Klaus Bieber", "Wolfgang Mazur"]
-    substitute: ["Viktoria Weiß", "Janis Bakenecker"]
-  - name: "Soziales, Bevölkerungsentwicklung und strategische Sozialplanung (SBS)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSd3U7j6FerJQlrWfqXtNPw"
-    ordinary: ["Viktoria Weiß", "Britta Siepmann"]
-    substitute: ["Laura Meiser", "Marita Wagner"]
-  - name: "Planen, Bauen und Denkmalschutz (PBD)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZeqrnzXc4n9m0oCrDUJCSy4"
-    ordinary: ["Philipp Kirchner", "Robert Brandt"]
-    substitute: ["Wilhelm Figge", "Samir Atan"]
-  - name: "Mobilität, Umwelt und Klimaschutz (MUK)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZasZeux7BVEhu5Xc3WZgrdw"
-    ordinary: ["Leon Epping", "Michael Raus"]
-    substitute: ["Philipp Kirchner", "Roy Pegel"]
-  - name: "Chancengerechtigkeit und Integration (ACI)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZeZKVVC4DwUzJwhGJf6TJUE"
-    ordinary: ["Suat Dal"]
-    substitute: ["Laura Meiser"]
-  - name: "Jugendhilfeausschuss (JHA)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZQ7mnupExXnAXCdGgAn56gY"
-    ordinary: ["Andreas Raus"]
-    substitute: []
-    substitute_empty: "Keine Vertretung"
-  - name: "Wahlausschuss (WahlA)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSgrwi1SIrlYWqIqQEEXZTU"
-    ordinary: ["Kasim Akbulut"]
-    substitute: ["Dieter Schwarze"]
-  - name: "Wahlprüfungsausschuss (WahlPrA)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZWKiYFXo890N-JT7VEUpWFw"
-    ordinary: ["Fabian Damken", "Tamino Senper"]
-    substitute: ["Klaus Bieber", "Samir Atan"]
-  - name: "Rechnungsprüfungsausschuss (RPA)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZUEvrsEcCM1F3Gsr9wqzgYY"
-    ordinary: ["Klaus Bieber", "Wolfgang Mazur"]
-    substitute: ["Fabian Damken", "Janis Bakenecker"]
-  - name: "Betriebsausschuss Abwasserwerk (BaAbw)"
-    url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSvg5129NvTJGQJdM1iT0f8"
-    ordinary: ["Suat Dal", "Stefan Kuhlmann-Eckel"]
-    substitute: ["Laura Meiser", "Robert Brandt"]
-companies:
-  - name: "Stadtwerke Gronau GmbH (SWG)"
-    supervisory_regular: "Stefan Kuhlmann-Eckel"
-    supervisory_substitute: "Robert Brandt"
-    shareholder_regular: "Fabian Damken"
-    shareholder_substitute: "Klaus Bieber"
-  - name: "Chance gGmbH (CH)"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZViBuIo91oj8Txd_OubT9y0"
-    supervisory_regular: "Andreas Raus"
-    supervisory_substitute: "Signe Schwarze"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSgwdRSUcdRrxoTlNapye8M"
-    shareholder_regular: "Suat Dal"
-    shareholder_substitute: "Viktoria Weiß"
-  - name: "GfA Gesellschaft für Arbeitsförderung mbH"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZaMeFBWFUbg9PMQNfKJ8P8Q"
-    supervisory_regular: "Andreas Raus"
-    supervisory_substitute: "Signe Schwarze"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSejlzwzC42n9lraGjWdoW4"
-    shareholder_regular: "Suat Dal"
-    shareholder_substitute: "Viktoria Weiß"
-  - name: "Wirtschaftsförderungsgesellschaft der Stadt Gronau mbH (WTG)"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZeOY_Oj9-XvvnQjGGYf1kZM"
-    supervisory_regular: "Sarah Weweler"
-    supervisory_substitute: "Suat Dal"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZYaqwomAOhhJxuJpM3vwVwA"
-    shareholder_regular: "Fabian Damken"
-    shareholder_substitute: "Klaus Bieber"
-  - name: "rock’n’popmuseum GmbH (RPM)"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZZ45np8AS3ffHVt9-VC-0Gc"
-    supervisory_regular: "Laura Meiser"
-    supervisory_substitute: "Marita Wagner"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZWtdi_U8W3yF1WoxhF7XN5o"
-    shareholder_regular: "Suat Dal"
-    shareholder_substitute: "Laura Meiser"
-  - name: "Kulturbüro Gronau GmbH (KB)"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZdw7-uUdQvKrbDDvJXo2-6g"
-    supervisory_regular: "Laura Meiser"
-    supervisory_substitute: "Marita Wagner"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZRksM3cY3GLn_AuTAM6MZGo"
-    shareholder_regular: "Suat Dal"
-    shareholder_substitute: "Laura Meiser"
-  - name: "WGG Wohnbau- und Grundstücksgesellschaft der Stadt Gronau mbH & Co. KG"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZRC_SAYg7JFvOtxa9ERA_jE"
-    supervisory_regular: "Robert Brandt"
-    supervisory_substitute: "Leon Epping"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZbVJiING1RaPVkLV3xxunAY"
-    shareholder_regular: "Fabian Damken"
-    shareholder_substitute: "Klaus Bieber"
-  - name: "WGG Verwaltungsgesellschaft mbH (WGG-Verwaltung)"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZXdPRJuPKCxH2QuKERtrRsQ"
-    supervisory_empty: "Kein Aufsichtsrat"
-    shareholder_regular: "Fabian Damken"
-    shareholder_substitute: "Klaus Bieber"
-  - name: "Quartiersentwicklungsgesellschaft für die Innenstadt Gronau mbH (QEG)"
-    supervisory_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZa0R0_JR68E6fOv6uJWacbY"
-    supervisory_regular: "Stefan Kuhlmann-Eckel (Vorsitzender)"
-    supervisory_substitute: "Marita Wagner"
-    shareholder_url: "https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSAQ-_iLxQ6khHxc0ijNg7w"
-    shareholder_empty: "Besteht nur aus dem Geschäftsführer, dem Bürgermeister sowie dem Vorsitzenden und dem stellvertretenden Vorsitzenden des Aufsichtsrates."
 ---
 
 ## Stadtrat
@@ -139,11 +30,6 @@ Neben den Ausschüssen und Gremien der städtischen Unternehmen gibt es noch ein
 
 Ob die geweiligen Gremien öffentlich oder nichtöffentlich tagen ist verschieden, ebenso gibt es keine zentrale Sammelstelle für die Sitzungstermine.
 
-| Gremium | Ordentlich | Vertretend |
-|---|---|---|
-| EUREGIO-Verbandsversammlung | Klaus Bieber | --- |
-| [Beirat für Kultur, Touristik und Stadtmarketing (TS)](https://gronau.ratsinfomanagement.net/gremien/?__=UGhVM0hpd2NXNFdFcExjZSlo-bkk2nS9uLZ3YuZf_WU) | Laura Meiser | Marita Wagner |
-| Kuratorium der Sparkassenstiftung für Gronau | Suat Dal | --- |
-| Mitgliederversammlung des Städte- und Gemeindebundes NRW | Suat Dal | Laura Meiser |
+{{< other-groups >}}
 
 *Stand: 30.10.2026. Kein Gewähr für Korrektheit und Vollständigkeit.*

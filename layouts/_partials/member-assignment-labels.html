@@ -1,0 +1,27 @@
+{{- $labels := dict "ordinary" (slice) "substitute" (slice) -}}
+{{- range .assignments -}}
+  {{- $assignment := . -}}
+  {{- $groups := where site.Params.roster.groups "id" $assignment.group -}}
+  {{- if not $groups -}}
+    {{- errorf "Unknown roster group %q for member %q" $assignment.group $.name -}}
+  {{- else -}}
+    {{- $group := index $groups 0 -}}
+    {{- $label := $group.id -}}
+    {{- if $assignment.board -}}
+      {{- if (index site.Params.roster.boards $assignment.board) -}}
+        {{- $label = printf "%s %s" (index site.Params.roster.boards $assignment.board).abbr $label -}}
+      {{- else -}}
+        {{- errorf "Unknown board %q for member %q" $assignment.board $.name -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if not (in (slice "ordinary" "substitute") $assignment.seat) -}}
+      {{- errorf "Unknown seat %q for roster group %q and member %q" $assignment.seat $assignment.group $.name -}}
+    {{- else -}}
+      {{- with $assignment.title }}{{ $label = printf "%s (%s)" $label . }}{{ end -}}
+      {{- $current := index $labels $assignment.seat -}}
+      {{- $current = $current | append $label -}}
+      {{- $labels = merge $labels (dict $assignment.seat $current) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $labels -}}

@@ -11,6 +11,8 @@ module:
 
 params:
   description: 'Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE im Rat der Stadt Gronau (Westf.)'
+  socialImage: '/images/fraktion-gronau.jpg'
+  socialImageAlt: 'Mitglieder der Fraktion vor dem Fraktionsbüro in Gronau'
   roster:
     lastReviewed: "2026-10-30"
     boards:

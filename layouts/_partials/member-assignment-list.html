@@ -1,0 +1,5 @@
+{{- range $index, $assignment := . -}}
+  {{- if $index }}, {{ end -}}
+  <abbr title="{{ $assignment.hint }}" aria-label="{{ printf "%s: %s" $assignment.label $assignment.hint }}">{{ $assignment.label }}</abbr>
+  {{- with $assignment.title }} ({{ . }}){{ end -}}
+{{- end -}}

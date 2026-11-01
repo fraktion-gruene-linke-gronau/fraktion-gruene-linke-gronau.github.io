@@ -39,8 +39,8 @@
         <section class="member-profile__assignment-group">
           <h4>Ausschüsse</h4>
           <dl>
-            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ partial "member-assignment-list.html" . }}</dd></div>{{ end }}
+            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ partial "member-assignment-list.html" . }}</dd></div>{{ end }}
           </dl>
         </section>
       {{- end }}
@@ -50,8 +50,8 @@
         <section class="member-profile__assignment-group">
           <h4>Gesellschaften</h4>
           <dl>
-            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ partial "member-assignment-list.html" . }}</dd></div>{{ end }}
+            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ partial "member-assignment-list.html" . }}</dd></div>{{ end }}
           </dl>
         </section>
       {{- end }}
@@ -61,8 +61,8 @@
         <section class="member-profile__assignment-group">
           <h4>Weitere Gremien</h4>
           <dl>
-            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ partial "member-assignment-list.html" . }}</dd></div>{{ end }}
+            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ partial "member-assignment-list.html" . }}</dd></div>{{ end }}
           </dl>
         </section>
       {{- end }}

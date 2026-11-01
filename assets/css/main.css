@@ -236,6 +236,7 @@ img[src$='#center'] { display: block; margin: 0 auto; }
 .member-profile__assignment-group dl > div { display: grid; gap: .5rem; grid-template-columns: 6.25rem minmax(0, 1fr); }
 .member-profile__assignment-group dt { color: var(--color-text-secondary); font-size: .78rem; font-weight: 700; line-height: 1.45; }
 .member-profile__assignment-group dd { color: var(--color-text-secondary); font-size: .88rem; line-height: 1.45; margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.member-profile__assignment-group abbr[title] { cursor: help; text-decoration: underline dotted; text-underline-offset: .15em; }
 .roster-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .roster-card { border-radius: 0; min-width: 0; padding: 1.15rem; }
 .roster-card__title { font-size: 1.12rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.3; }

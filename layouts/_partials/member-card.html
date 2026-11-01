@@ -33,8 +33,8 @@
       {{ with index $member "role" }}<span class="member-profile__badge">{{ . }}</span>{{ end }}
     </div>
     <div class="member-profile__roles">
-      {{ with index $assignments "ordinary" }}<p><strong>Ordentlich</strong>{{ delimit . ", " }}</p>{{ end }}
-      {{ with index $assignments "substitute" }}<p><strong>Vertretend</strong>{{ delimit . ", " }}</p>{{ end }}
+      {{ with index $assignments "ordinary" }}<p><strong>Ordentlich</strong>{{ partial "member-assignment-list.html" . }}</p>{{ end }}
+      {{ with index $assignments "substitute" }}<p><strong>Vertretend</strong>{{ partial "member-assignment-list.html" . }}</p>{{ end }}
     </div>
   </div>
 </article>

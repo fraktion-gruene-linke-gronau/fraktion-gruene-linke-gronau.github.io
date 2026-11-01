@@ -1,0 +1,18 @@
+{{- $peers := slice -}}
+{{- range site.Params.roster.members -}}
+  {{- $member := . -}}
+  {{- if ne $member.name $.member -}}
+    {{- range $member.assignments -}}
+      {{- if and
+        (eq .group $.group)
+        (eq (default "" .board) $.board)
+        (eq .seat "ordinary")
+      -}}
+        {{- $title := "" -}}
+        {{- with .title }}{{ $title = printf ", %s" . }}{{ end -}}
+        {{- $peers = $peers | append $member.name -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $peers -}}

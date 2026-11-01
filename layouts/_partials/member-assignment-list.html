@@ -1,0 +1,10 @@
+{{- range $index, $assignment := . -}}
+  {{- if $index }}, {{ end -}}
+  {{- $tooltip := $assignment.hint -}}
+  {{- with $assignment.peers }}
+    {{- $tooltip = printf "%s. \nWeitere ordentliche Mitglieder: %s" $tooltip (delimit . ", ") -}}
+  {{- else }}
+    {{- $tooltip = printf "%s. \nKeine weiteren ordentlichen Fraktionsmitglieder." $tooltip -}}
+  {{- end }}
+  <abbr title="{{ $tooltip }}" aria-label="{{ $tooltip }}">{{ $assignment.label }}</abbr>
+{{- end -}}

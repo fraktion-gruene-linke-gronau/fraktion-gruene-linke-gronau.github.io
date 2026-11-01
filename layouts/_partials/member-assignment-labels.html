@@ -1,6 +1,5 @@
 {{- $labels := dict "ordinary" (slice) "substitute" (slice) -}}
-{{- range .assignments -}}
-  {{- $assignment := . -}}
+{{- range $index, $assignment := .assignments -}}
   {{- $groups := where site.Params.roster.groups "id" $assignment.group -}}
   {{- if not $groups -}}
     {{- errorf "Unknown roster group %q for member %q" $assignment.group $.name -}}
@@ -18,8 +17,19 @@
       {{- errorf "Unknown seat %q for roster group %q and member %q" $assignment.seat $assignment.group $.name -}}
     {{- else -}}
       {{- with $assignment.title }}{{ $label = printf "%s (%s)" $label . }}{{ end -}}
+      {{- $hint := or $group.name $group.id -}}
+      {{- if $assignment.board -}}
+        {{- $board := index site.Params.roster.boards $assignment.board -}}
+        {{- $hint = printf "%s: %s" $board.name $group.name -}}
+      {{- end -}}
+      {{- $peers := partial "member-assignment-peers.html" (dict
+        "group" $assignment.group
+        "board" ($assignment.board | default "")
+        "member" $.name
+      ) -}}
+      {{- $item := dict "label" $label "hint" $hint "peers" $peers -}}
       {{- $current := index $labels $assignment.seat -}}
-      {{- $current = $current | append $label -}}
+      {{- $current = $current | append $item -}}
       {{- $labels = merge $labels (dict $assignment.seat $current) -}}
     {{- end -}}
   {{- end -}}

@@ -232,6 +232,7 @@ img[src$='#center'] { display: block; margin: 0 auto; }
 .member-profile__roles { display: grid; gap: .5rem; }
 .member-profile__roles p { color: var(--color-text-secondary); font-size: .92rem; line-height: 1.45; }
 .member-profile__roles strong { color: var(--color-text-secondary); display: block; font-size: .76rem; letter-spacing: .02em; text-transform: none; }
+.member-profile__roles abbr[title] { cursor: help; text-decoration: underline dotted; text-underline-offset: .15em; }
 .roster-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .roster-card { border-radius: 0; min-width: 0; padding: 1.15rem; }
 .roster-card__title { font-size: 1.12rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.3; }

@@ -2,7 +2,7 @@ name: Site Reliability
 
 on:
   schedule:
-    - cron:  '0 4 * * *'
+    - cron: '0 4 * * *'
   workflow_run:
     workflows:
       - GitHub Pages
@@ -12,11 +12,11 @@ on:
 jobs:
   crawl_for_broken_links:
     runs-on: ubuntu-latest
-    permissions:
+    permissions: {}
     steps:
-    - name: "check links"
-      uses: ScholliYT/Broken-Links-Crawler-Action@v3
-      with:
-        website_url: 'https://fraktion-gruene-linke-gronau.de'
-        verbose: true
-        max_depth: 1
+      - name: "check links"
+        uses: ScholliYT/Broken-Links-Crawler-Action@v3
+        with:
+          website_url: 'https://fraktion-gruene-linke-gronau.de'
+          verbose: true
+          max_depth: 1

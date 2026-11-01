@@ -32,40 +32,9 @@
       <h3>{{ $name }}</h3>
       {{ with index $member "role" }}<span class="member-profile__badge">{{ . }}</span>{{ end }}
     </div>
-    <div class="member-profile__assignments">
-      {{- $ordinary := index $assignments "committee-ordinary" -}}
-      {{- $substitute := index $assignments "committee-substitute" -}}
-      {{- if or $ordinary $substitute }}
-        <section class="member-profile__assignment-group">
-          <h4>Ausschüsse</h4>
-          <dl>
-            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-          </dl>
-        </section>
-      {{- end }}
-      {{- $ordinary = index $assignments "company-ordinary" -}}
-      {{- $substitute = index $assignments "company-substitute" -}}
-      {{- if or $ordinary $substitute }}
-        <section class="member-profile__assignment-group">
-          <h4>Gesellschaften</h4>
-          <dl>
-            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-          </dl>
-        </section>
-      {{- end }}
-      {{- $ordinary = index $assignments "other-ordinary" -}}
-      {{- $substitute = index $assignments "other-substitute" -}}
-      {{- if or $ordinary $substitute }}
-        <section class="member-profile__assignment-group">
-          <h4>Weitere Gremien</h4>
-          <dl>
-            {{ with $ordinary }}<div><dt>Ordentlich</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-            {{ with $substitute }}<div><dt>Vertretend</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
-          </dl>
-        </section>
-      {{- end }}
+    <div class="member-profile__roles">
+      {{ with index $assignments "ordinary" }}<p><strong>Ordentlich</strong>{{ delimit . ", " }}</p>{{ end }}
+      {{ with index $assignments "substitute" }}<p><strong>Vertretend</strong>{{ delimit . ", " }}</p>{{ end }}
     </div>
   </div>
 </article>

@@ -1,11 +1,4 @@
-{{- $labels := dict
-  "committee-ordinary" (slice)
-  "committee-substitute" (slice)
-  "company-ordinary" (slice)
-  "company-substitute" (slice)
-  "other-ordinary" (slice)
-  "other-substitute" (slice)
--}}
+{{- $labels := dict "ordinary" (slice) "substitute" (slice) -}}
 {{- range .assignments -}}
   {{- $assignment := . -}}
   {{- $groups := where site.Params.roster.groups "id" $assignment.group -}}
@@ -24,21 +17,10 @@
     {{- if not (in (slice "ordinary" "substitute") $assignment.seat) -}}
       {{- errorf "Unknown seat %q for roster group %q and member %q" $assignment.seat $assignment.group $.name -}}
     {{- else -}}
-      {{- $category := "" -}}
-      {{- if eq $group.type "committee" -}}
-        {{- $category = "committee" -}}
-      {{- else if eq $group.type "company" -}}
-        {{- $category = "company" -}}
-      {{- else if in (slice "other" "reference") $group.type -}}
-        {{- $category = "other" -}}
-      {{- else -}}
-        {{- errorf "Unknown roster group type %q for group %q" $group.type $assignment.group -}}
-      {{- end -}}
       {{- with $assignment.title }}{{ $label = printf "%s (%s)" $label . }}{{ end -}}
-      {{- $key := printf "%s-%s" $category $assignment.seat -}}
-      {{- $current := index $labels $key -}}
+      {{- $current := index $labels $assignment.seat -}}
       {{- $current = $current | append $label -}}
-      {{- $labels = merge $labels (dict $key $current) -}}
+      {{- $labels = merge $labels (dict $assignment.seat $current) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

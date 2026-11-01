@@ -1,0 +1,22 @@
+name: Site Reliability
+
+on:
+  schedule:
+    - cron:  '0 4 * * *'
+  workflow_run:
+    workflows:
+      - GitHub Pages
+    types:
+      - completed
+
+jobs:
+  crawl_for_broken_links:
+    runs-on: ubuntu-latest
+    permissions:
+    steps:
+    - name: "check links"
+      uses: ScholliYT/Broken-Links-Crawler-Action@v3
+      with:
+        website_url: 'https://fraktion-gruene-linke-gronau.de'
+        verbose: true
+        max_depth: 1

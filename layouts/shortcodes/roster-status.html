@@ -1,0 +1,9 @@
+{{- $lastReviewed := site.Params.roster.lastReviewed -}}
+{{- if not $lastReviewed -}}
+  {{- errorf "Roster review date is missing from site params" -}}
+{{- else -}}
+<aside class="roster-status" aria-label="Aktualität der Angaben">
+  Zuletzt überprüft am <time datetime="{{ $lastReviewed | time.Format "2006-01-02" }}">{{ $lastReviewed | time.Format ":date_long" }}</time>.
+  Keine Gewähr für Richtigkeit und Vollständigkeit.
+</aside>
+{{- end -}}

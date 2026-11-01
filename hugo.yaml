@@ -12,6 +12,7 @@ module:
 params:
   description: 'Fraktion BÜNDNIS 90/DIE GRÜNEN & DIE LINKE im Rat der Stadt Gronau (Westf.)'
   roster:
+    lastReviewed: "2026-10-30"
     boards:
       supervisory:
         name: Aufsichtsrat

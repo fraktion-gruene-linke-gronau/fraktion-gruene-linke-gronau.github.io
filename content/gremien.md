@@ -32,4 +32,5 @@ Ob die geweiligen Gremien öffentlich oder nichtöffentlich tagen ist verschiede
 
 {{< other-groups >}}
 
-*Stand: 30.10.2026. Kein Gewähr für Korrektheit und Vollständigkeit.*
+
+{{< roster-status >}}

@@ -18,4 +18,5 @@ Ohne die sachkundigen Bürger\*innen wäre die Arbeit im Rat und den zugehörige
 
 {{< members category="sb" >}}
 
-*Stand: 30.10.2026. Kein Gewähr für Korrektheit und Vollständigkeit.*
+
+{{< roster-status >}}
